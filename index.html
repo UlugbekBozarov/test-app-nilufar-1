@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Вопросы по CSS</title>
+</head>
+<style>
+    .question {
+        position: relative;
+    }
+    .centered-container {
+        position: relative;
+        /* ichidagi blockni absolyut qilib surish uchun avval position ga relativ berish kerak */
+        background: silver;
+        height: 200px;
+    }
+    .centered-container__bluebox {
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(50% - 10px);
+        /* calc qilishimning sababi 50% surilganda aynan markazda bo'lmaydi ya'ni block o'zidan avvalgi blockning teng yarimdan bo'ladi va ikkinchi yarmidan boshlab joylashtiradi shunda kichik piksellarda bu unchalik ham sezilmasligi mumkin, ammo piksellar kattalashganda markazdan qochgani bilinib qoladi */
+        height: 20px;
+        width: 20px;
+        background: blue;
+    }
+    .centered-flexbox {
+        background: silver;
+        height: 200px;
+        display: flex;
+        justify-content: space-around;
+        /* align-content: center; */
+        /* bu yerda align-content emas balki align-items bo'lishi kerak */
+        align-items: center;
+    }
+    .centered-flexbox__bluebox {
+        height: 20px;
+        width: 20px;
+        background: blue;
+    }
+    .red {
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="question">
+        <h1>Questions</h1>
+        <p class="red">
+            Important!: Не писать ответы прямо в Гист. Зделайте форк и отправте
+            ссылку на ответы.
+        </p>
+        <p>
+            Ссылка на Sandbox: https://codesandbox.io/s/1f0dv?file=/index.html
+        </p>
+        <h2>1. Сenter Blue Div</h2>
+        <p>
+            Исправь ошибку и зацентрируй голубой див елемент по вертикали и по
+            горизонтали по серому контейнеру.<br />
+        </p>
+        <div class="centered-container">
+            <div class="centered-container__bluebox"></div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>1. Сenter Blue Div 2</h2>
+        <p>
+            Здесь голубой див должен быть зацентрирован по вертикали.<br />
+            Какая здесь была ошибка?
+        </p>
+        <div class="centered-flexbox">
+            <div class="centered-flexbox__bluebox"></div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>2. Сenter Blue Div 2</h2>
+        <p>
+            Здесь голубой див должен быть зацентрирован по вертикали и
+            горизонтали.<br />
+            Какая здесь была ошибка?
+        </p>
+        <div class="centered-flexbox">
+            <div class="centered-flexbox__bluebox"></div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>3. Сenter Blue Div 3</h2>
+        <p>
+            1. Какие варианты центрирования елемента по горизонтали еще знаете?
+            Men ikkita usulini bilaman. Birinchisi
+            <!-- Ichma ich ikkita block bor deb faraz qilsak, birinchisini position: relative, ikkinchisini position: absolute va left: calc(50% - (width / 2)px) -->
+            <!-- Huddi shunday ikkita divni birinchisini display: flex justify-content: center, qilib sursa bo'ladi bunda birinchi blokni ichida ikkita block ketma ket bo'lsa ikkalasi yonma yon tushib qoladi. Buni to'g'rilashni ham bir nechta yo'llari bor.  -->
+            <br />2. Какие варианты центрирования елемента по вертикали еще знаете?
+            <!-- Bunda ham huddi shunday position relativ va ikkinchisiga position absolute va top calc(50% - (height / 2)px) qilinadi va display flex va align-items center qilishimiz kerak -->
+            <!--  -->
+        </p>
+    </div>
+    <div class="question">
+        <h2>1. Сenter Blue Div 3</h2>
+        <p>
+            В чем разница между <code>display: block;</code> и
+            <code>display: inline;</code>?
+            <!-- inline bo'ganda ikkita inline bitta qatorda bo'ladi block esa bitta qatorni to'liq egallab oladi -->
+        </p>
+    </div>
+</body>
+</html>
